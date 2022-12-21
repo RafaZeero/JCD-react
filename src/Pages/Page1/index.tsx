@@ -4,10 +4,10 @@ import { Card } from '../../Components/Card';
 import './style.css';
 
 type DataType = {
-  id: number;
-  title: string;
-  content: string;
-  price: string;
+  readonly id: number;
+  readonly title: string;
+  readonly content: string;
+  readonly price: string;
 };
 
 export const Page1 = () => {
@@ -17,7 +17,7 @@ export const Page1 = () => {
     fetch('http://localhost:3333')
       .then((res) => res.json())
       .then((data) => setData(data));
-  }, [data]);
+  }, []);
 
   return (
     <main>
